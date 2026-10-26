@@ -59,11 +59,8 @@ echo -e "\n${BLUE}[3/6] Installing dependencies and building...${NC}"
 npm install --legacy-peer-deps
 npx prisma generate || true
 
-# If .next does not exist, build it
-if [ ! -d ".next" ]; then
-    echo -e "${GOLD}Building Next.js production bundle...${NC}"
-    npm run build
-fi
+echo -e "${GOLD}Building Next.js production bundle...${NC}"
+npm run build
 
 # 6. PM2 Process Launch
 echo -e "\n${BLUE}[4/6] Starting application with PM2 on port 3002...${NC}"
@@ -94,5 +91,5 @@ echo -e "Application: Guardian Legal Solutions"
 echo -e "Port: 3002 (Reverse proxied by Nginx on port 80/443)"
 echo -e "Local Health Check: http://127.0.0.1:3002"
 echo -e "\nTo enable free Let's Encrypt SSL/HTTPS, run:"
-echo -e "${GOLD}certbot --nginx -d legal.guardianfinancialexperts.com${NC}"
+echo -e "${GOLD}certbot --nginx -d guardianslegalsolutions.com -d www.guardianslegalsolutions.com${NC}"
 echo -e "===================================================================\n"
