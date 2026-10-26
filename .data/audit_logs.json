@@ -1,0 +1,100 @@
+[
+  {
+    "id": "audit-1793012006247-1wwlz",
+    "action": "ENQUIRY_STATUS_UPDATED",
+    "entity": "Enquiry",
+    "details": "Enquiry enq_1793011994357_m9yl1 updated to IN_PROGRESS",
+    "timestamp": "2026-10-26T10:53:26.247Z"
+  },
+  {
+    "id": "audit-1793012006218-cub9d",
+    "action": "ADMIN_LOGIN",
+    "entity": "Auth",
+    "details": "Admin admin@guardianlegalsolutions.com logged in successfully",
+    "timestamp": "2026-10-26T10:53:26.218Z"
+  },
+  {
+    "id": "audit-1793011994630-0vhh3",
+    "action": "ADMIN_LOGIN",
+    "entity": "Auth",
+    "details": "Admin admin@guardianlegalsolutions.com logged in successfully",
+    "timestamp": "2026-10-26T10:53:14.630Z"
+  },
+  {
+    "id": "audit-1793011994417-nwstb",
+    "action": "CONSULTATION_REQUESTED",
+    "entity": "Consultation",
+    "details": "Consultation request GLS-CNS-994413-2702 logged for Sunita Malhotra (2026-11-15 10:30 AM – 11:30 AM)",
+    "timestamp": "2026-10-26T10:53:14.417Z"
+  },
+  {
+    "id": "audit-1793011994361-bussh",
+    "action": "ENQUIRY_RECEIVED",
+    "entity": "Enquiry",
+    "details": "New enquiry GLS-ENQ-994357-8553 received from Dr. Vikramaditya Sen (civil-and-commercial-litigation)",
+    "timestamp": "2026-10-26T10:53:14.361Z"
+  },
+  {
+    "id": "audit-1793011870495-2zdi0",
+    "action": "ADMIN_LOGIN",
+    "entity": "Auth",
+    "details": "Admin admin@guardianlegalsolutions.com logged in successfully",
+    "timestamp": "2026-10-26T10:51:10.495Z"
+  },
+  {
+    "id": "audit-1793011870286-k4ibk",
+    "action": "CONSULTATION_REQUESTED",
+    "entity": "Consultation",
+    "details": "Consultation request GLS-CNS-870282-9407 logged for Sunita Malhotra (2026-11-15 10:30 AM – 11:30 AM)",
+    "timestamp": "2026-10-26T10:51:10.286Z"
+  },
+  {
+    "id": "audit-1793011870266-0en97",
+    "action": "ENQUIRY_RECEIVED",
+    "entity": "Enquiry",
+    "details": "New enquiry GLS-ENQ-870262-5714 received from Dr. Vikramaditya Sen (civil-and-commercial-litigation)",
+    "timestamp": "2026-10-26T10:51:10.266Z"
+  },
+  {
+    "id": "audit-1793011825418-2p2s7",
+    "action": "CONSULTATION_REQUESTED",
+    "entity": "Consultation",
+    "details": "Consultation request GLS-CNS-825410-4481 logged for Sunita Malhotra (2026-11-15 10:30 AM – 11:30 AM)",
+    "timestamp": "2026-10-26T10:50:25.418Z"
+  },
+  {
+    "id": "audit-1793011825374-mg4wn",
+    "action": "ENQUIRY_RECEIVED",
+    "entity": "Enquiry",
+    "details": "New enquiry GLS-ENQ-825365-4298 received from Dr. Vikramaditya Sen (civil-and-commercial-litigation)",
+    "timestamp": "2026-10-26T10:50:25.374Z"
+  },
+  {
+    "id": "audit-1793011711491-fpf24",
+    "action": "CONSULTATION_REQUESTED",
+    "entity": "Consultation",
+    "details": "Consultation request GLS-CNS-711480-1643 logged for Sunita Malhotra (2026-11-15 10:30 AM – 11:30 AM)",
+    "timestamp": "2026-10-26T10:48:31.491Z"
+  },
+  {
+    "id": "audit-1793011711465-gwvds",
+    "action": "ENQUIRY_RECEIVED",
+    "entity": "Enquiry",
+    "details": "New enquiry GLS-ENQ-711462-2611 received from Dr. Vikramaditya Sen (civil-and-commercial-litigation)",
+    "timestamp": "2026-10-26T10:48:31.465Z"
+  },
+  {
+    "id": "audit-1793011674308-ik3gi",
+    "action": "CONSULTATION_REQUESTED",
+    "entity": "Consultation",
+    "details": "Consultation request GLS-CNS-674304-5305 logged for Sunita Malhotra (2026-11-15 10:30 AM – 11:30 AM)",
+    "timestamp": "2026-10-26T10:47:54.308Z"
+  },
+  {
+    "id": "audit-1793011674279-vff2f",
+    "action": "ENQUIRY_RECEIVED",
+    "entity": "Enquiry",
+    "details": "New enquiry GLS-ENQ-674275-1714 received from Dr. Vikramaditya Sen (civil-and-commercial-litigation)",
+    "timestamp": "2026-10-26T10:47:54.279Z"
+  }
+]

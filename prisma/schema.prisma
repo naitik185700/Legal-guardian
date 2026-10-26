@@ -1,0 +1,257 @@
+// Prisma schema for Guardian Legal Solutions
+// Normalized PostgreSQL Architecture
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  PARTNER
+  ASSOCIATE
+  INTAKE_OFFICER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  CONSULTATION_REQUESTED
+  IN_PROGRESS
+  CLOSED
+}
+
+enum ConsultationStatus {
+  REQUESTED
+  CONFIRMED
+  RESCHEDULED
+  COMPLETED
+  CANCELLED
+}
+
+enum ConsultationFormat {
+  IN_PERSON_CHAMBERS
+  SECURE_VIDEO_CONFERENCE
+  TELEPHONIC
+}
+
+model AdminUser {
+  id           String      @id @default(uuid())
+  email        String      @unique
+  passwordHash String
+  name         String
+  role         AdminRole   @default(ASSOCIATE)
+  isActive     Boolean     @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  auditLogs    AuditLog[]
+  assignedLeads Enquiry[]
+
+  @@map("admin_users")
+}
+
+model PracticeArea {
+  id                String                 @id @default(uuid())
+  slug              String                 @unique
+  name              String
+  shortDescription  String
+  fullDescription   String
+  isVerifiedService Boolean                @default(true)
+  featured          Boolean                @default(false)
+  mattersCovered    String[]
+  howWeAssist       String[]
+  requiredDocuments String[]
+  jurisdictionNote  String?
+  sortOrder         Int                    @default(0)
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  stages            PracticeAreaStage[]
+  faqs              PracticeAreaFaq[]
+  enquiries         Enquiry[]
+  consultations     ConsultationRequest[]
+
+  @@map("practice_areas")
+}
+
+model PracticeAreaStage {
+  id             String       @id @default(uuid())
+  practiceAreaId String
+  practiceArea   PracticeArea @relation(fields: [practiceAreaId], references: [id], onDelete: Cascade)
+  stepNumber     Int
+  title          String
+  description    String
+
+  @@map("practice_area_stages")
+}
+
+model PracticeAreaFaq {
+  id             String       @id @default(uuid())
+  practiceAreaId String
+  practiceArea   PracticeArea @relation(fields: [practiceAreaId], references: [id], onDelete: Cascade)
+  question       String
+  answer         String
+  sortOrder      Int          @default(0)
+
+  @@map("practice_area_faqs")
+}
+
+model LawyerProfile {
+  id               String    @id @default(uuid())
+  slug             String    @unique
+  name             String
+  designation      String
+  photoUrl         String
+  isVerified       Boolean   @default(true)
+  qualifications   String[]
+  barRegistrations String[]
+  practiceAreas    String[]
+  languages        String[]
+  bio              String
+  email            String?
+  featured         Boolean   @default(false)
+  sortOrder        Int       @default(0)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  blogPosts        BlogPost[]
+
+  @@map("lawyer_profiles")
+}
+
+model Enquiry {
+  id                     String      @id @default(uuid())
+  referenceNumber        String      @unique
+  fullName               String
+  email                  String
+  phone                  String
+  preferredContactMethod String      @default("EMAIL")
+  practiceAreaSlug       String?
+  practiceArea           PracticeArea? @relation(fields: [practiceAreaSlug], references: [slug])
+  enquirySummary         String
+  preferredDate          DateTime?
+  consentGiven           Boolean     @default(false)
+  status                 LeadStatus  @default(NEW)
+  staffNotes             String?
+  assignedToId           String?
+  assignedTo             AdminUser?  @relation(fields: [assignedToId], references: [id])
+  ipAddress              String?
+  createdAt              DateTime    @default(now())
+  updatedAt              DateTime    @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("enquiries")
+}
+
+model ConsultationRequest {
+  id                 String             @id @default(uuid())
+  referenceNumber    String             @unique
+  fullName           String
+  email              String
+  phone              String
+  practiceAreaSlug   String?
+  practiceArea       PracticeArea?      @relation(fields: [practiceAreaSlug], references: [slug])
+  consultationFormat ConsultationFormat @default(SECURE_VIDEO_CONFERENCE)
+  preferredDate      DateTime
+  preferredTimeSlot  String
+  caseSummary        String
+  consentGiven       Boolean            @default(false)
+  status             ConsultationStatus @default(REQUESTED)
+  staffNotes         String?
+  ipAddress          String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  @@index([status])
+  @@index([preferredDate])
+  @@map("consultation_requests")
+}
+
+model BlogCategory {
+  id        String     @id @default(uuid())
+  name      String     @unique
+  slug      String     @unique
+  posts     BlogPost[]
+
+  @@map("blog_categories")
+}
+
+model BlogPost {
+  id              String         @id @default(uuid())
+  slug            String         @unique
+  title           String
+  excerpt         String
+  content         String
+  coverImageUrl   String?
+  readingTime     String         @default("5 min read")
+  isPublished     Boolean        @default(false)
+  publishedAt     DateTime?
+  categoryId      String?
+  category        BlogCategory?  @relation(fields: [categoryId], references: [id])
+  authorId        String?
+  author          LawyerProfile? @relation(fields: [authorId], references: [id])
+  metaTitle       String?
+  metaDescription String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@index([isPublished, publishedAt])
+  @@map("blog_posts")
+}
+
+model FAQ {
+  id          String   @id @default(uuid())
+  category    String
+  question    String
+  answer      String
+  sortOrder   Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@map("faqs")
+}
+
+model SiteSetting {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model SEOMetadata {
+  id          String   @id @default(uuid())
+  pagePath    String   @unique
+  title       String
+  description String
+  keywords    String[]
+  ogImageUrl  String?
+  canonical   String?
+  updatedAt   DateTime @updatedAt
+
+  @@map("seo_metadata")
+}
+
+model AuditLog {
+  id          String    @id @default(uuid())
+  adminUserId String?
+  adminUser   AdminUser? @relation(fields: [adminUserId], references: [id])
+  action      String
+  entity      String
+  entityId    String?
+  details     String?
+  ipAddress   String?
+  createdAt   DateTime  @default(now())
+
+  @@index([action])
+  @@index([createdAt])
+  @@map("audit_logs")
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "admin-001",
+    "email": "admin@guardianlegalsolutions.com",
+    "passwordHash": "$2b$10$kMP4Q9GRJ0KNKcEajB9e/uHUX3P9lr.KZUA2JGIOCv8EoQ1/gm5LK",
+    "name": "Senior Managing Partner",
+    "role": "SUPER_ADMIN",
+    "isActive": true
+  },
+  {
+    "id": "admin-002",
+    "email": "intake@guardianlegalsolutions.com",
+    "passwordHash": "$2b$10$kMP4Q9GRJ0KNKcEajB9e/uHUX3P9lr.KZUA2JGIOCv8EoQ1/gm5LK",
+    "name": "Intake & Registrar Office",
+    "role": "INTAKE_OFFICER",
+    "isActive": true
+  }
+]

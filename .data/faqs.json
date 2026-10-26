@@ -1,0 +1,44 @@
+[
+  {
+    "id": "faq-001",
+    "category": "General Practice",
+    "question": "How do I initiate a formal legal enquiry with Guardian Legal Solutions?",
+    "answer": "You can submit your enquiry through our secure online contact form or consultation portal. Our intake office will review your request, conduct preliminary conflict-of-interest checks, and schedule a confidential discussion with the appropriate practice counsel.",
+    "order": 1
+  },
+  {
+    "id": "faq-002",
+    "category": "General Practice",
+    "question": "Does submitting a website enquiry establish an advocate-client relationship?",
+    "answer": "No. Submitting an enquiry or booking request does not constitute or establish an advocate-client relationship. A formal relationship is created only after conflict checks are cleared and a bilateral Vakalatnama or professional engagement agreement is signed.",
+    "order": 2
+  },
+  {
+    "id": "faq-003",
+    "category": "Consultations",
+    "question": "What formats are available for legal consultations?",
+    "answer": "We offer scheduled in-person consultations at our central chambers as well as secure encrypted video conferences and telephonic discussions for domestic and international clients.",
+    "order": 3
+  },
+  {
+    "id": "faq-004",
+    "category": "Consultations",
+    "question": "What documentation should I prepare before our initial conference?",
+    "answer": "We recommend assembling the primary agreement or notice in question, relevant chronological correspondence (letters, emails), proof of notices served, and a brief chronological summary of facts. Our team provides an itemized checklist upon intake confirmation.",
+    "order": 4
+  },
+  {
+    "id": "faq-005",
+    "category": "Litigation & Disputes",
+    "question": "Which courts and tribunals does the firm regularly appear before?",
+    "answer": "Our advocates appear before the Supreme Court of India, High Courts (with dedicated daily practice before the High Court of Delhi), Commercial Courts, District & Sessions Courts, National Company Law Tribunal (NCLT), Debt Recovery Tribunals (DRT), Consumer Commissions (NCDRC/SCDRC), and Arbitral Tribunals.",
+    "order": 5
+  },
+  {
+    "id": "faq-006",
+    "category": "Corporate & Contracts",
+    "question": "What is the typical turnaround time for reviewing commercial contracts?",
+    "answer": "Standard commercial agreements (NDAs, vendor contracts, MSAs) are typically reviewed and redlined with an actionable risk assessment matrix within 2 to 4 business days, depending on transaction volume and complexity.",
+    "order": 6
+  }
+]
