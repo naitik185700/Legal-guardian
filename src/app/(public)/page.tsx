@@ -43,18 +43,18 @@ export default function HomePage() {
                 Dedicated Legal Practice & Advisory
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-legal-charcoal leading-[1.15] tracking-tight">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-serif text-legal-charcoal leading-[1.2] sm:leading-[1.15] tracking-tight">
                 {FIRM_CONFIG.tagline}
               </h1>
 
-              <p className="text-lg sm:text-xl text-legal-body leading-relaxed max-w-2xl font-light">
+              <p className="text-base sm:text-lg lg:text-xl text-legal-body leading-relaxed max-w-2xl font-light">
                 {FIRM_CONFIG.subheadline}
               </p>
 
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/consultation"
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 text-xs font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-all duration-200 rounded-sm shadow-md hover:shadow-lg active:scale-[0.99]"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 text-xs font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-all duration-200 rounded-sm shadow-md hover:shadow-lg active:scale-[0.99] text-center"
                 >
                   <span>Request a Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function HomePage() {
 
                 <Link
                   href="/practice-areas"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-xs font-semibold tracking-wider uppercase text-legal-charcoal bg-transparent hover:bg-legal-gold/10 border border-legal-border hover:border-legal-gold transition-colors duration-200 rounded-sm"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-xs font-semibold tracking-wider uppercase text-legal-charcoal bg-transparent hover:bg-legal-gold/10 border border-legal-border hover:border-legal-gold transition-colors duration-200 rounded-sm text-center"
                 >
                   <span>Explore Our Services</span>
                   <ChevronRight className="w-4 h-4 text-legal-gold" />
@@ -70,7 +70,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="pt-8 border-t border-legal-border grid grid-cols-3 gap-4 sm:gap-6 text-legal-charcoal">
+              <div className="pt-6 sm:pt-8 border-t border-legal-border grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-legal-charcoal">
                 <div>
                   <div className="flex items-center gap-1.5 text-legal-gold">
                     <Scale className="w-4 h-4" />

@@ -79,7 +79,7 @@ export function ConsultationForm() {
   };
 
   return (
-    <div className="bg-white border border-legal-border rounded-sm shadow-card p-8 sm:p-10">
+    <div className="bg-white border border-legal-border rounded-sm shadow-card p-5 sm:p-8 md:p-10">
       <div className="mb-8 border-b border-legal-border pb-6">
         <h3 className="text-2xl font-serif text-legal-charcoal">
           Request a Scheduled Consultation

@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { FIRM_CONFIG } from '@/lib/config/firm';
 
 const NAV_LINKS = [
@@ -30,7 +29,6 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -43,19 +41,19 @@ export function Header() {
           : 'bg-[#FCFBF9] border-b border-legal-border/80'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           {/* Official Brand Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-legal-gold rounded-sm"
+            className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-legal-gold rounded-sm shrink-0"
             aria-label="Guardian Legal Solutions Home"
           >
-            <div className="relative h-12 sm:h-14 w-auto flex items-center">
+            <div className="relative h-9 xs:h-10 sm:h-12 md:h-14 w-auto flex items-center">
               <img
                 src="/brand/guardian-legal-logo-trimmed.png"
-                alt="Guardian Legal Solutions Logo - Scales of Justice Emblem"
-                className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90"
+                alt="Guardian Legal Solutions Logo"
+                className="h-8 xs:h-9 sm:h-11 md:h-12 w-auto max-w-[210px] xs:max-w-[260px] sm:max-w-none object-contain transition-opacity duration-200 group-hover:opacity-90"
               />
             </div>
           </Link>
@@ -88,7 +86,7 @@ export function Header() {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/consultation"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-all duration-200 rounded-sm shadow-sm hover:shadow active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-legal-gold"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-all duration-200 rounded-sm shadow-sm hover:shadow active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-legal-gold"
             >
               <span>Request Consultation</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -96,21 +94,21 @@ export function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex xl:hidden items-center gap-2">
+          <div className="flex xl:hidden items-center gap-1.5 sm:gap-2">
             <Link
               href="/consultation"
-              className="sm:hidden inline-flex items-center px-3 py-1.5 text-xs font-semibold uppercase tracking-wider bg-legal-gold text-legal-black rounded-sm"
+              className="sm:hidden inline-flex items-center px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider bg-legal-gold text-legal-black rounded-sm shadow-sm"
             >
               Consult
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-sm text-legal-charcoal hover:bg-legal-ivory-dark focus:outline-none focus:ring-2 focus:ring-legal-gold"
+              className="p-2 rounded-sm text-legal-charcoal hover:bg-legal-ivory-dark focus:outline-none focus:ring-2 focus:ring-legal-gold"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
@@ -142,7 +140,7 @@ export function Header() {
           <div className="mt-6 pt-5 border-t border-legal-border space-y-3">
             <Link
               href="/consultation"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-colors rounded-sm shadow-sm"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-semibold tracking-wider uppercase text-legal-black bg-legal-gold hover:bg-legal-gold-hover transition-colors rounded-sm shadow-sm"
             >
               <span>Request a Consultation</span>
               <ArrowRight className="w-4 h-4" />

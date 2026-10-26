@@ -78,6 +78,7 @@ pm2 startup systemd -u root --hp /root || true
 # 7. Configure Nginx
 echo -e "\n${BLUE}[5/6] Configuring Nginx reverse proxy...${NC}"
 cp -f "${APP_DIR}/deploy/nginx-guardian-legal.conf" /etc/nginx/sites-available/guardian-legal.conf
+rm -f /etc/nginx/sites-enabled/default
 ln -sf /etc/nginx/sites-available/guardian-legal.conf /etc/nginx/sites-enabled/guardian-legal.conf
 
 # Test and reload Nginx

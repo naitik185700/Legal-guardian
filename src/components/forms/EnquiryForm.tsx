@@ -53,7 +53,7 @@ export function EnquiryForm() {
   };
 
   return (
-    <div className="bg-white p-8 sm:p-10 border border-legal-border rounded-sm shadow-card">
+    <div className="bg-white p-5 sm:p-8 md:p-10 border border-legal-border rounded-sm shadow-card">
       <div className="mb-8 border-b border-legal-border pb-6">
         <h3 className="text-2xl font-serif text-legal-charcoal">
           Send a Confidential Enquiry

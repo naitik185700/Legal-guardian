@@ -11,10 +11,10 @@ export function Footer() {
       <div className="h-[2px] bg-gradient-to-r from-transparent via-legal-gold to-transparent opacity-80" />
 
       {/* Main Footer Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-8">
           {/* Col 1 & 2: Brand & Identity */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="sm:col-span-2 space-y-6">
             <Link href="/" className="inline-block" aria-label="Guardian Legal Solutions">
               <div className="flex items-center gap-3">
                 <img
