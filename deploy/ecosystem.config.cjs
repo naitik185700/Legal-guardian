@@ -11,7 +11,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3002,
-        NEXT_PUBLIC_APP_URL: 'https://legal.guardianfinancialexperts.com',
+        NEXT_PUBLIC_APP_URL: 'https://guardianslegalsolutions.com',
       },
     },
   ],
