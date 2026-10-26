@@ -39,22 +39,31 @@ if ! command -v pm2 &> /dev/null; then
 fi
 
 # 4. Extract Application Bundle
-echo -e "\n${BLUE}[2/6] Unpacking application into ${APP_DIR}...${NC}"
+echo -e "\n${BLUE}[2/6] Setting up application in ${APP_DIR}...${NC}"
 mkdir -p "${APP_DIR}"
 
 if [ -f "${ARCHIVE_PATH}" ]; then
     tar -xzf "${ARCHIVE_PATH}" -C "${APP_DIR}"
-    echo -e "${GREEN}Archive extracted successfully.${NC}"
-elif [ -d "/root/deploy" ]; then
-    echo -e "${GOLD}Archive not found in /root. Copying directly if present...${NC}"
+    echo -e "${GREEN}Archive extracted successfully into ${APP_DIR}.${NC}"
+elif [ -f "./package.json" ]; then
+    echo -e "${GREEN}Running directly from repository directory.${NC}"
+    if [ "$(pwd)" != "${APP_DIR}" ]; then
+        cp -r ./* "${APP_DIR}/"
+    fi
 fi
 
 cd "${APP_DIR}"
 
 # 5. Production Dependencies & Prisma Client
-echo -e "\n${BLUE}[3/6] Installing production dependencies...${NC}"
-npm install --omit=dev --legacy-peer-deps
+echo -e "\n${BLUE}[3/6] Installing dependencies and building...${NC}"
+npm install --legacy-peer-deps
 npx prisma generate || true
+
+# If .next does not exist, build it
+if [ ! -d ".next" ]; then
+    echo -e "${GOLD}Building Next.js production bundle...${NC}"
+    npm run build
+fi
 
 # 6. PM2 Process Launch
 echo -e "\n${BLUE}[4/6] Starting application with PM2 on port 3002...${NC}"
