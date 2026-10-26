@@ -2,11 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'guardian-legal',
-      script: 'node_modules/next/dist/bin/next',
-      args: 'start -p 3002',
+      script: 'npm',
+      args: 'start -- -p 3002',
       cwd: '/var/www/guardian-legal',
-      instances: 'max',
-      exec_mode: 'cluster',
       autorestart: true,
       watch: false,
       max_memory_restart: '800M',
