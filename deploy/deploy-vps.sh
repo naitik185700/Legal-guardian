@@ -57,7 +57,7 @@ cd "${APP_DIR}"
 # 5. Production Dependencies & Prisma Client
 echo -e "\n${BLUE}[3/6] Installing dependencies and building...${NC}"
 npm install --legacy-peer-deps
-npx prisma generate || true
+npx -y prisma generate || true
 
 echo -e "${GOLD}Building Next.js production bundle...${NC}"
 npm run build
