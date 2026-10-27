@@ -40,12 +40,10 @@ The application is built around the authentic **Guardian Legal Solutions** visua
 
 | Route | Purpose & Key Features |
 |---|---|
-| `/` | Homepage featuring editorial hero, verified practice areas grid, firm approach, lawyer intros, consultation workflow, legal insights, and interactive FAQs. |
+| `/` | Homepage featuring editorial hero, verified practice areas grid, firm approach, institutional standards, consultation workflow, legal insights, and interactive FAQs. |
 | `/about` | Institutional background, philosophy, Bar Council compliance, confidentiality code, and dispute handling standards. |
 | `/practice-areas` | Directory of verified disciplines: Commercial Litigation, Corporate Governance, Arbitration, Contract Vetting, Banking Disputes, Real Estate. |
 | `/practice-areas/[slug]` | Dynamic service pages with procedural roadmaps, documentary checklists, and area-specific FAQs. |
-| `/our-lawyers` | Verified advocate profiles, bar enrollment entries, practice concentrations, and academic degrees. |
-| `/our-lawyers/[slug]` | Individual counsel profiles with full biography and consultation booking CTA. |
 | `/insights` | Case law commentary, searchable articles, and category filters. |
 | `/insights/[slug]` | Individual analytical articles with reading time, author credentials, and educational disclaimers. |
 | `/faqs` | Searchable administrative and procedural knowledgebase. |

@@ -9,7 +9,7 @@ base = 'http://localhost:3005'
 
 routes = [
     '/', '/about', '/practice-areas', '/practice-areas/civil-and-commercial-litigation',
-    '/our-lawyers', '/our-lawyers/managing-counsel', '/insights',
+    '/insights',
     '/insights/commercial-contracts-indemnity-clauses-risk-mitigation',
     '/faqs', '/contact', '/consultation', '/privacy-policy', '/terms-of-use',
     '/disclaimer', '/accessibility', '/robots.txt', '/sitemap.xml'

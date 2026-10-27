@@ -82,11 +82,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/our-lawyers" className="hover:text-legal-gold transition-colors">
-                  Advocates & Counsel
-                </Link>
-              </li>
-              <li>
                 <Link href="/insights" className="hover:text-legal-gold transition-colors">
                   Legal Insights & Articles
                 </Link>

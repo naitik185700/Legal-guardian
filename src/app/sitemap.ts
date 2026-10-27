@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${domain}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${domain}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${domain}/practice-areas`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${domain}/our-lawyers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${domain}/insights`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: `${domain}/faqs`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${domain}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
@@ -28,13 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  const lawyerRoutes: MetadataRoute.Sitemap = FIRM_CONFIG.lawyers.map((l) => ({
-    url: `${domain}/our-lawyers/${l.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.75,
-  }));
-
   const articleRoutes: MetadataRoute.Sitemap = dbStore.getArticles().map((a) => ({
     url: `${domain}/insights/${a.slug}`,
     lastModified: a.publishedAt || now,
@@ -42,5 +34,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...practiceAreaRoutes, ...lawyerRoutes, ...articleRoutes];
+  return [...staticRoutes, ...practiceAreaRoutes, ...articleRoutes];
 }

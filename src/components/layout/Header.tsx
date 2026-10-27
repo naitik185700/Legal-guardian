@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About the Firm' },
   { href: '/practice-areas', label: 'Practice Areas' },
-  { href: '/our-lawyers', label: 'Our Lawyers' },
   { href: '/insights', label: 'Insights' },
   { href: '/faqs', label: 'FAQs' },
   { href: '/contact', label: 'Contact' },

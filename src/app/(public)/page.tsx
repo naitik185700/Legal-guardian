@@ -21,7 +21,6 @@ import { HomeFaqSection } from '@/components/ui/HomeFaqSection';
 
 export default function HomePage() {
   const practiceAreas = FIRM_CONFIG.practiceAreas;
-  const lawyers = FIRM_CONFIG.lawyers.filter((l) => l.featured);
   const articles = dbStore.getArticles().slice(0, 3);
   const faqs = dbStore.getFAQs().slice(0, 5);
 
@@ -298,67 +297,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. VERIFIED LAWYERS & COUNSEL */}
+      {/* 5. INSTITUTIONAL STANDARDS & CHAMBERS EXCELLENCE */}
       <section className="py-20 bg-white border-b border-legal-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="space-y-2">
               <span className="text-xs uppercase font-semibold tracking-widest text-legal-gold">
-                Chambers Advocacy
+                Chambers Excellence
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif text-legal-charcoal">
-                Our Counsel & Practice Leads
+                Institutional Legal Acumen & Standards
               </h2>
             </div>
             <Link
-              href="/our-lawyers"
+              href="/about"
               className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-legal-charcoal hover:text-legal-gold group"
             >
-              <span>View Full Directory</span>
+              <span>Learn About Our Principles</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {lawyers.map((lawyer) => (
-              <div
-                key={lawyer.slug}
-                className="bg-[#FCFBF9] border border-legal-border rounded-sm overflow-hidden shadow-subtle hover:shadow-card transition-all duration-300 flex flex-col justify-between"
-              >
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-xl font-serif text-legal-charcoal">{lawyer.name}</h3>
-                      <p className="text-xs text-legal-gold font-medium mt-0.5">{lawyer.designation}</p>
-                    </div>
-                    <span className="px-2 py-0.5 text-[10px] uppercase font-semibold bg-green-50 text-green-700 border border-green-200 rounded">
-                      Verified Bar
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-legal-body leading-relaxed line-clamp-3">
-                    {lawyer.bio}
-                  </p>
-
-                  <div className="space-y-1.5 pt-3 border-t border-legal-border text-xs text-legal-muted">
-                    <p className="font-semibold text-legal-charcoal">Qualifications:</p>
-                    <p>{lawyer.qualifications.join(' • ')}</p>
-                    <p className="font-semibold text-legal-charcoal pt-1">Bar Registrations:</p>
-                    <p className="font-mono text-[11px] text-legal-charcoal">{lawyer.barRegistrations[0]}</p>
-                  </div>
+            <div className="bg-[#FCFBF9] border border-legal-border rounded-sm p-8 space-y-5 shadow-subtle hover:shadow-card transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-11 h-11 rounded-sm bg-legal-gold/15 flex items-center justify-center text-legal-gold">
+                  <Shield className="w-5 h-5" />
                 </div>
-
-                <div className="p-6 pt-0">
-                  <Link
-                    href={`/our-lawyers/${lawyer.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-legal-charcoal bg-white border border-legal-border hover:border-legal-gold hover:text-legal-gold transition-colors rounded-sm"
-                  >
-                    <span>Read Professional Profile</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
+                <h3 className="text-xl font-serif text-legal-charcoal">Fiduciary Oversight</h3>
+                <p className="text-sm text-legal-body leading-relaxed font-light">
+                  Every legal brief is evaluated with comprehensive evidentiary scrutiny, strict Bar Council ethical compliance, and mandatory conflict verification before representation is undertaken.
+                </p>
               </div>
-            ))}
+              <div className="pt-4 border-t border-legal-border/80">
+                <p className="text-xs font-medium text-legal-gold">Bar Council & High Court Affiliated Practice</p>
+              </div>
+            </div>
+
+            <div className="bg-[#FCFBF9] border border-legal-border rounded-sm p-8 space-y-5 shadow-subtle hover:shadow-card transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-11 h-11 rounded-sm bg-legal-gold/15 flex items-center justify-center text-legal-gold">
+                  <Scale className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-serif text-legal-charcoal">Forum-Tested Advocacy</h3>
+                <p className="text-sm text-legal-body leading-relaxed font-light">
+                  Regular trial, appellate, and commercial bench appearances before the High Courts, National Company Law Tribunals (NCLT), Debt Recovery Tribunals (DRT), and institutional arbitral panels.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-legal-border/80">
+                <p className="text-xs font-medium text-legal-gold">High Courts • Arbitral Tribunals • DRT & NCLT</p>
+              </div>
+            </div>
+
+            <div className="bg-[#FCFBF9] border border-legal-border rounded-sm p-8 space-y-5 shadow-subtle hover:shadow-card transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-11 h-11 rounded-sm bg-legal-gold/15 flex items-center justify-center text-legal-gold">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-serif text-legal-charcoal">Absolute Discretion</h3>
+                <p className="text-sm text-legal-body leading-relaxed font-light">
+                  Confidential legal communications, enterprise-grade encrypted intake infrastructure, and unvarnished legal risk assessments that protect enterprise and individual client interests.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-legal-border/80">
+                <p className="text-xs font-medium text-legal-gold">Strict Attorney-Client Confidentiality Protected</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

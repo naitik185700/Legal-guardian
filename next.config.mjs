@@ -11,6 +11,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/our-lawyers',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/our-lawyers/:slug*',
+        destination: '/about',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
