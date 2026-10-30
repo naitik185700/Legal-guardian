@@ -53,8 +53,12 @@ export default function ContactPage() {
                       <p className="font-semibold text-legal-charcoal text-sm">Chambers Location</p>
                       <p className="mt-1 text-legal-muted leading-relaxed">
                         {FIRM_CONFIG.contact.address.line1}
-                        <br />
-                        {FIRM_CONFIG.contact.address.line2}
+                        {FIRM_CONFIG.contact.address.line2 ? (
+                          <>
+                            <br />
+                            {FIRM_CONFIG.contact.address.line2}
+                          </>
+                        ) : null}
                         <br />
                         {FIRM_CONFIG.contact.address.city}, {FIRM_CONFIG.contact.address.state} —{' '}
                         {FIRM_CONFIG.contact.address.postalCode}

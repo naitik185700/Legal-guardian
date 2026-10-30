@@ -70,7 +70,7 @@ export default function TermsOfUsePage() {
             <p>
               These Terms of Use and any claims arising out of the use of this website shall be governed by and
               construed in accordance with the laws of India. Any disputes shall be subject to the exclusive
-              jurisdiction of the courts of competent jurisdiction at New Delhi, India.
+              jurisdiction of the courts of competent jurisdiction at Gurugram, Haryana / New Delhi, India.
             </p>
           </section>
         </div>

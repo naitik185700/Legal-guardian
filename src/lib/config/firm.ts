@@ -90,15 +90,14 @@ export const FIRM_CONFIG: FirmConfig = {
     "Thoughtful legal guidance, strategic representation, and dedicated advocacy to help individuals and businesses resolve complex legal matters with precision and integrity.",
   domain: process.env.NEXT_PUBLIC_APP_URL || "https://guardianlegalsolutions.com",
   contact: {
-    phone: "+91 87960 61488",
-    phoneFormatted: "+91 87960 61488",
+    phone: "+91 93153 12406",
+    phoneFormatted: "+91 93153 12406",
     email: "contact@guardianlegalsolutions.com",
     address: {
-      line1: "Legal Chambers Suite, Commercial Boulevard",
-      line2: "Central Business District",
-      city: "New Delhi",
-      state: "Delhi NCR",
-      postalCode: "110001",
+      line1: "Sector 49",
+      city: "Gurugram",
+      state: "Haryana",
+      postalCode: "122018",
       country: "India",
       isVerifiedOfficeLocation: true,
     },
@@ -109,8 +108,8 @@ export const FIRM_CONFIG: FirmConfig = {
     },
   },
   jurisdiction: {
-    primary: "High Courts, District Courts & Tribunals (Delhi NCR & National Practice)",
-    coverageAreas: ["Delhi NCR", "High Courts of India", "NCLT", "Consumer Forums", "Arbitral Tribunals"],
+    primary: "High Courts, District Courts & Tribunals (Gurugram, Delhi NCR & National Practice)",
+    coverageAreas: ["Gurugram", "Delhi NCR", "High Courts of India", "NCLT", "Consumer Forums", "Arbitral Tribunals"],
     disclaimer:
       "As per the rules of the Bar Council of India, law firms are not permitted to solicit work or advertise. The contents of this website are intended solely for educational, informational, and general guidance purposes and must not be construed as legal advice or solicitation.",
   },
